@@ -1,5 +1,4 @@
 import json, csv
-import os
 
 DATA_FILE = 'data.csv'
 TEMP_FILE = 'tempfile.csv'
