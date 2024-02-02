@@ -16,8 +16,10 @@ class CsvToJson:
 
         with open(csv_file, 'r') as data:
             _dict = csv.DictReader(data)
-        # Behind the scene, at least at the point I know alread, the action of looping through an obj using the for loop, calls the "next" function per loop.
+        # Behind the scenes, at least at the point I know already, the action of looping through an obj using the for loop, calls a "next" function per loop.
         # The number of items in the dict obj have the possibility to overpass the number of times the "next" function can be called. 
+        # Thus, if this happens, "passDataRemaining" creates a new file called "tempfile.csv" that stores only the data that was not managed yet, and call
+            # this function again passing the new created file as the argument of this method.
             while True:
                 
                 try:
